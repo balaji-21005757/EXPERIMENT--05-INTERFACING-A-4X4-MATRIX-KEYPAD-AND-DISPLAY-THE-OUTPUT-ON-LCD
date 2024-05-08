@@ -189,7 +189,17 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 bool col1,col2,col3,col4;
 void key();
-
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+  while (1)
+  {
+     key();
+     HAL_Delay(500);
+  }
+}
 void key()
 {
 	Lcd_PortType ports[] = { GPIOA, GPIOA, GPIOA, GPIOA };
